@@ -1,0 +1,29 @@
+<h2>Lista de Productos</h2>
+<ul>
+  <li *ngFor="let producto of Productos; let i = index" [ngClass]="producto.descuento ? 'descuento' : 'descuentont'" >
+    <h3>{{ producto.nombre }}</h3>
+    <p>Precio: {{ producto.precio}}</p>
+    <button (click)="eliminarProducto(i)">Eliminar Producto</button>
+
+    <label>
+      <input type="checkbox" [(ngModel)]="producto.descuento"> En descuento
+    </label>
+
+    <p *ngIf="producto.descuento">¡Producto en descuento!</p>
+    <p *ngIf="producto.descuento">¡Producto en descuentont!</p>
+  </li>
+</ul>
+
+<h3>Agregar Producto</h3>
+<form (ngSubmit)="agregarProducto()">
+  <label for="nombre">Nombre:</label>
+  <input type="text" id="nombre" [(ngModel)]="nuevoProducto.nombre" name="nombre" required>
+
+  <label for="precio">Precio:</label>
+  <input type="number" id="precio" [(ngModel)]="nuevoProducto.precio" name="precio" required>
+
+  <label for="descuento">¿En descuento?</label>
+  <input type="checkbox" id="descuento" [(ngModel)]="nuevoProducto.descuento" name="descuento">
+
+  <button type="submit">Agregar Producto</button>
+</form>

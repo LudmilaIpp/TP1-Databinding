@@ -1,0 +1,15 @@
+.descuento {
+  color: green;
+  font-weight: bold;
+  border: 2px solid green;
+  padding: 10px;
+  border-radius: 5px;
+}
+.descuentont{
+  color: red;
+  font-weight: bold;
+  border: 2px solid red;
+  padding: 10px;
+  border-radius: 5px;
+}
+
